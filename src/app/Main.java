@@ -24,8 +24,9 @@ public class Main {
             System.out.println("1. Tambah Produk");
             System.out.println("2. Tampilkan Produk");
             System.out.println("3. Cari Produk");
-            System.out.println("4. Hapus Produk");
-            System.out.println("5. Keluar");
+            System.out.println("4. Edit Produk");
+            System.out.println("5. Hapus Produk");
+            System.out.println("6. Keluar");
             System.out.print("Pilih Menu : ");
 
             try {
@@ -111,6 +112,26 @@ public class Main {
 
                     case 4:
 
+                        System.out.print("Masukkan kode produk : ");
+                        String kodeEdit = input.nextLine();
+
+                        System.out.print("Nama baru : ");
+                        String namaBaru = input.nextLine();
+
+                        System.out.print("Harga baru : ");
+                        double hargaBaru = input.nextDouble();
+                        input.nextLine();
+
+                        if (data.editProduk(kodeEdit, namaBaru, hargaBaru)) {
+                            System.out.println("Produk berhasil diubah.");
+                        } else {
+                            System.out.println("Produk tidak ditemukan.");
+                        }
+
+                        break;
+                        
+                    case 5:
+
                         System.out.print("Masukkan kode produk yang akan dihapus : ");
                         String hapus = input.nextLine();
 
@@ -122,7 +143,7 @@ public class Main {
 
                         break;
 
-                    case 5:
+                    case 6:
 
                         System.out.println("Terima kasih telah menggunakan program.");
                         break;
@@ -141,7 +162,7 @@ public class Main {
 
             }
 
-        } while (menu != 5);
+        } while (menu != 6);
 
     }
 
