@@ -41,6 +41,20 @@ public class DataProduk {
         return null;
     }
 
+    
+    // Edit produk
+    public boolean editProduk(String kode, String namaBaru, double hargaBaru) {
+        
+        Produk produk = cariProduk(kode);
+        
+        if (produk != null) {
+            produk.setNama(namaBaru);
+            produk.setHarga(hargaBaru);
+            return true;
+    }
+    return false;
+}
+    
     // Hapus produk
     public boolean hapusProduk(String kode) {
         for (int i = 0; i < jumlah; i++) {
